@@ -65,7 +65,15 @@
 					// Exibe o total de produtos
 					document.getElementById('totalProdutos').textContent = 'Total de Produtos: ' + totalProdutos;
 				})
+				.catch(error => {
+					console.error('Erro ao buscar produtos: ', error); // Exibe o erro no console
+					// Exibe a mensagem de erro
+					document.getElementById('errorMensagem').style.display = 'block';
+				});
 			}
+			
+			// Executa a função listarProduto quando a página é carregada
+			document.addEventListener('DOMContentLoaded', listarProdutos);
 		</script>
 	</body>
 </html>
