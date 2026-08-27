@@ -55,5 +55,20 @@
 			const status = document.getElementById('status').value;
 			return { nome, preco: parseFloat(preco), quantidade: parseInt(quantidade), status 			}
 		}
+		
+		// Função para listar todos os produtos (assíncrona - permite que o seu código inicie 	uma tarefa demorada e continue executando outras coisas enquanto espera que essa tarefa 	termine)
+		async function listarTodos() {
+			const response = await fetch(BASE_URL);
+			const produtos = await response.json();
+			const lista = document.getElementById('lista-produtos');
+			const total = document.getElementById('total-produtos');
+			lista.innerHTML = '';
+			produtos.forEach(produto => {
+				const item = document.createElement('li');
+				item.textContent = 'ID: ${produto.id}, Nome: ${produto.nome}, Preço: 	${produto.preco}, Quantidade: ${produto.quantidade}, Status: ${produto.status}';
+				lista.appendChild(item);
+			});
+			total.textContent = 'Total de produtos: ${produtos.length}';
+		}
 	</script>
 </body>
