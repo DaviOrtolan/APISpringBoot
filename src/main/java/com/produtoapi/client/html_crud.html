@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<!-- Meta tags para definir a codificação de caracteres e viewport -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Título da página -->
+	<title> Título da página </title>
+</head>
+<body>
+	<h1>CRUD - Cliente HTML/JavaScript</h1> <!-- Cabeçalho principal da página -->
+	
+	<!-- Formulário de entrada de dados -->
+	<div>
+		<label for="id">ID:</label>
+		<input type="text" id="id"> <!--Campo de entrada para o ID do produto -->
+ 	</div>
+	<div>
+		<label for="nome">Nome:</label>
+		<input type="text" id="nome"> <!-- Campo de entrada para o nome do produto -->
+	</div>
+	<div>
+		<label for="preco">Preço:</label>
+		<input type="text" id="preco">
+	</div>
+	<div>
+		<label for="quantidade">Quantidade:</label>
+		<input type="text" id="quantidade">
+	</div>
+	<div>
+		<label for="status">Status:</label>
+		<input type="text" id="status">
+	</div>
+	
+	<!-- Botões para salvar, atualizar, deletar e consultar -->
+	<button onclick="salvar()" style="background-color: green; color: white;">Salvar</button>
+	<button onclick="atualizar()" style="background-color: blue; color: white;">Atualizar</button>
+	<button onclick="deletar()" style="background-color: red; color: white;">Deletar</button>
+	<button onclick="carregarCampos()" style="background-color: gray; color: white;">Consultar</button>
+	<button onclick="limparCampos" style="background-color: black; color: white;">Limpar Campos</button>
+	
+	<!-- Lista para exibir produtos -->
+	<h2>Lista de Produtos</h2>
+	<ul id="lista-produtos"></ul>
+	<p id="total-produtos"></p>
+</body>
