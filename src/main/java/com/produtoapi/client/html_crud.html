@@ -43,4 +43,17 @@
 	<h2>Lista de Produtos</h2>
 	<ul id="lista-produtos"></ul>
 	<p id="total-produtos"></p>
+	
+	<script>
+		const BASE_URL='http://localhost:8080/produtos'; // URL base da API
+		
+		// Função para coletar dados do formulário
+		function getProdutoForm() {
+			const nome = document.getElementById('nome').value;
+			const preco = document.getElementById('preco').value;
+			const quantidade = document.getElementById('quantidade').value;
+			const status = document.getElementById('status').value;
+			return { nome, preco: parseFloat(preco), quantidade: parseInt(quantidade), status 			}
+		}
+	</script>
 </body>
