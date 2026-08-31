@@ -80,5 +80,16 @@
 			});
 			listarTodos();
 		}
+		
+		async function atualizar() {
+			const produto = getProdutoForm();
+			const id = document.getElementById('id').value;
+			await fetch('${BASE_URL}/${id}', {
+				method: 'PUT',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(produto)
+			});
+			listarTodos();
+		}
 	</script>
 </body>
