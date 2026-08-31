@@ -70,5 +70,15 @@
 			});
 			total.textContent = 'Total de produtos: ${produtos.length}';
 		}
+		
+		async function salvar() {
+			const produto = getProdutoForm();
+			await fetch(BASE_URL, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(produto)
+			});
+			listarTodos();
+		}
 	</script>
 </body>
