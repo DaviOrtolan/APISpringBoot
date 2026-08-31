@@ -94,8 +94,23 @@
 		
 		async function deletar() {
 			const id = document.getElementById('id').value;
-			await fetch('${BASE_URL}/${id}', { method: 'DELETE'});
+			await fetch('${BASE_URL}/${id}', { method: 'DELETE' });
 			listarTodos();
+		}
+		
+		function carregarCampos() {
+			const id = document.getElementById('id').value;
+			fetch('${BASE_URL}/${id}')
+			.then(response => response.json())
+			.then(produto => {
+				document.getElementById('nome').value = produto.nome;
+				document.getElementById('preco').value = produto.preco;
+				document.getElementById('quantidade').value = produto.quantidade;
+				document.getElementById('status').value = produto.status;
+			})
+			.catch(error => {
+				console.error('Erro ao consultar produto: ', error);
+			});
 		}
 	</script>
 </body>
