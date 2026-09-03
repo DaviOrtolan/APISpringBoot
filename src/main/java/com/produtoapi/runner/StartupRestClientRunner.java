@@ -12,15 +12,15 @@ import java.util.List;
 @Component
 public class StartupRestClientRunner implements CommandLineRunner {
 	@Override
-	public void run(String...args) throws Exception {
+	public void run(String...args) throws Exception { // Varargs
 		System.out.println("RestClient sendo executado");
 		
 		RestTemplate restTemplate = new RestTemplate();
-		String url = "https://localhost:8080/produtos"; // URL da API 
+		String url = "http://localhost:8080/produtos"; // URL da API 
 		
 		Produto[] produtosArray = restTemplate.getForObject(url, Produto[].class);
 		List<Produto> produtos = Arrays.asList(produtosArray);
 		
-		produtos.forEach(produto -> System.out.println("ID:"  + produto.getId() + " " + produto.getNome() + ": " + produto.getPreco()));
+		produtos.forEach(produto -> System.out.println("ID: "  + produto.getId() + " " + produto.getNome() + ": " + produto.getPreco()));
 	}
 }
