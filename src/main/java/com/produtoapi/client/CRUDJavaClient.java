@@ -33,4 +33,29 @@ public class CRUDJavaClient {
 		});
 	}
 	
+	// Método para salvar um novo produto
+	public Produto salvar(Produto produto) {
+		HttpEntity<Produto> request = new HttpEntity<>(produto);
+		return restTemplate.postForObject(BASE_URL, request, Produto.class);
+	}
+			
+	// Método para deletar um produto pelo ID
+	public void deletar(Long id) {
+		restTemplate.delete(BASE_URL + "/" + id);
+	}
+	
+	// Método para atualizar o produto existente
+	public Produto atualizar(Long id, Produto produto) {
+		HttpHeaders headers = new HttpHeaders();
+		HttpEntity<Produto> request = new HttpEntity<>(produto, headers);
+		ResponseEntity<Produto> response = restTemplate.exchange(BASE_URL + "/" + id, HttpMethod.PUT, request, Produto.class);
+		return response.getBody();
+	}
+	
+	// Método para buscar produto pelo ID
+	public Produto findById(Long id) {
+		ResponseEntity<Produto> response = restTemplate.getForEntity(BASE_URL + "/" + id, Produto.class);
+		return response.getBody()	;
+	}
+	
 }
