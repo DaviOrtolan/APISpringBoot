@@ -40,7 +40,7 @@ public class CRUDJavaClient {
 	}
 			
 	// Método para deletar um produto pelo ID
-	public void deletar(Long id) {
+	public void deletar(long id) {
 		restTemplate.delete(BASE_URL + "/" + id);
 	}
 	
@@ -53,14 +53,14 @@ public class CRUDJavaClient {
 	}
 	
 	// Método para buscar produto pelo ID
-	public Produto findById(Long id) {
+	public Produto findById(long id) {
 		ResponseEntity<Produto> response = restTemplate.getForEntity(BASE_URL + "/" + id, Produto.class);
 		return response.getBody()	;
 	}
 	
 	public static void main (String[] args) {
 		CRUDJavaClient client = new CRUDJavaClient();
-		
+		/*
 		// ---- Criar um novo produto ----
 		Produto novoProduto = new Produto();
 		novoProduto.setNome("Skate");
@@ -70,21 +70,21 @@ public class CRUDJavaClient {
 		
 		System.out.println("Criar um novo produto");
 		client.salvar(novoProduto);
-		client.listarTodos(); // Listar todos os produtos
-		
+		client.listarTodos(); // Listar todos os produtos */
+		/*
 		// ---- Atualizar o produto ----
-		Produto atualizarProduto = client.findById(xxxx);
-		atualizarProduto.setNome("SkateBoar");
+		Produto atualizarProduto = client.findById(202);
+		atualizarProduto.setNome("SkateBoard");
 		atualizarProduto.setPreco(100.00);
 		
 		System.out.println("Atualizar produto");
 		client.atualizar(atualizarProduto.getId(), atualizarProduto);
 		
-		client.listarTodos();
+		client.listarTodos();*/
 		
 		// ---- Deletar Produto ----
 		System.out.println("Deletar o produto");
-		client.deletar(xxxx);
+		client.deletar(202);
 		client.listarTodos();
 	}
 	
