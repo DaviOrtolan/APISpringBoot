@@ -58,4 +58,34 @@ public class CRUDJavaClient {
 		return response.getBody()	;
 	}
 	
+	public static void main (String[] args) {
+		CRUDJavaClient client = new CRUDJavaClient();
+		
+		// ---- Criar um novo produto ----
+		Produto novoProduto = new Produto();
+		novoProduto.setNome("Skate");
+		novoProduto.setPreco(300.00);
+		novoProduto.setQuantidade(200);
+		novoProduto.setStatus("Disponível");
+		
+		System.out.println("Criar um novo produto");
+		client.salvar(novoProduto);
+		client.listarTodos(); // Listar todos os produtos
+		
+		// ---- Atualizar o produto ----
+		Produto atualizarProduto = client.findById(xxxx);
+		atualizarProduto.setNome("SkateBoar");
+		atualizarProduto.setPreco(100.00);
+		
+		System.out.println("Atualizar produto");
+		client.atualizar(atualizarProduto.getId(), atualizarProduto);
+		
+		client.listarTodos();
+		
+		// ---- Deletar Produto ----
+		System.out.println("Deletar o produto");
+		client.deletar(xxxx);
+		client.listarTodos();
+	}
+	
 }
