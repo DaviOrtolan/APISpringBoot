@@ -98,11 +98,16 @@ public class ProdutoService {
 		return produtoRepository.findByStatus(status);
 	}
 	
-	public List<Produto> findByStatusIsNull(String status) {
-		return produtoRepository.findByStatusIsNull(status);
+	public List<Produto> findByStatusIsNull() {
+		return produtoRepository.findByStatusIsNull();
 	}
 	
 	public List<Produto> findByPrecoAndStatus(Double preco, String status) {
 		return produtoRepository.findByPrecoAndStatus(preco, status);
+	}
+	
+	// Método para trazer o número total de produtos
+	public Long count() {
+		return produtoRepository.count();
 	}
 }

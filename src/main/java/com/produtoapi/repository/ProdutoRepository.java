@@ -29,6 +29,6 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>  {
 	
 	// Buscas Combinadas, Padronizadas e Totalizadas
 	List<Produto> findByStatus(String status);
-	List<Produto> findByStatusIsNull(String status);
+	List<Produto> findByStatusIsNull();
 	List<Produto> findByPrecoAndStatus(Double preco, String status);
 }
