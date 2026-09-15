@@ -92,4 +92,17 @@ public class ProdutoService {
 	public List<Produto> findByQuantidadeLessThan(Integer quantidade) {
 		return produtoRepository.findByQuantidadeLessThan(quantidade);
 	}
+	
+	// Métodos de busca Combinadas, Padronizadas e Totalizadas
+	public List<Produto> findByStatus(String status) {
+		return produtoRepository.findByStatus(status);
+	}
+	
+	public List<Produto> findByStatusIsNull(String status) {
+		return produtoRepository.findByStatusIsNull(status);
+	}
+	
+	public List<Produto> findByPrecoAndStatus(Double preco, String status) {
+		return produtoRepository.findByPrecoAndStatus(preco, status);
+	}
 }
