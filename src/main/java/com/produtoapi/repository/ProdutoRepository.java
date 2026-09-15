@@ -21,4 +21,9 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>  {
 	// usando Anottation @Query para obter o total de preços
 	@Query("SELECT SUM(p.preco) FROM Produto p")
 	Double findTotalPreco();
+	
+	// Buscas por Quantidade
+	List<Produto> findByQuantidade(Integer quantidade);
+	List<Produto> findByQuantidadeGreaterThen(Integer quantidade);
+	List<Produto> findByQuantidadeLessThen(Integer quantidade);
 }
