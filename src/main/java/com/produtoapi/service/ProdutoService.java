@@ -69,7 +69,7 @@ public class ProdutoService {
 	}
 	
 	public List<Produto> findByPrecoGreaterThen(Double preco) {
-		return produtoRepository.findByPrecoGreaterThen(preco);
+		return produtoRepository.findByPrecoGreaterThan(preco);
 	}
 	
 	public List<Produto> findByPrecoLessThen(Double preco) {
@@ -85,11 +85,11 @@ public class ProdutoService {
 		return produtoRepository.findByQuantidade(quantidade);
 	}
 	
-	public List<Produto> findByQuantidadeGreaterThen(Integer quantidade) {
-		return produtoRepository.findByQuantidadeGreaterThen(quantidade);
+	public List<Produto> findByQuantidadeGreaterThan(Integer quantidade) {
+		return produtoRepository.findByQuantidadeGreaterThan(quantidade);
 	}
 	
-	public List<Produto> findByQuantidadeLessThen(Integer quantidade) {
-		return produtoRepository.findByQuantidadeLessThen(quantidade);
+	public List<Produto> findByQuantidadeLessThan(Integer quantidade) {
+		return produtoRepository.findByQuantidadeLessThan(quantidade);
 	}
 }

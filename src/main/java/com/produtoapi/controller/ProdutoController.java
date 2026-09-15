@@ -100,11 +100,11 @@ public class ProdutoController {
 	
 	@GetMapping("/buscarPorQuantidadeMaiorQue")
 	public List<Produto> buscarPorQuantidadeMaiorQue(@RequestParam Integer valor) {
-		return produtoService.findByQuantidadeGreaterThen(valor);
+		return produtoService.findByQuantidadeGreaterThan(valor);
 	}
 	
 	@GetMapping("/buscarPorQuantidadeMenorQue")
 	public List<Produto> buscarPorQuantidadeMenorQue(@RequestParam Integer valor) {
-		return produtoService.findByQuantidadeLessThen(valor);
+		return produtoService.findByQuantidadeLessThan(valor);
 	}
 }

@@ -15,7 +15,7 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>  {
 	
 	// Diferentes buscas por PREÇO
 	List<Produto> findByPreco(Double preco);
-	List<Produto> findByPrecoGreaterThen(Double preco);
+	List<Produto> findByPrecoGreaterThan(Double preco);
 	List<Produto> findByPrecoLessThan(Double preco);
 	
 	// usando Anottation @Query para obter o total de preços
@@ -24,6 +24,6 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>  {
 	
 	// Buscas por Quantidade
 	List<Produto> findByQuantidade(Integer quantidade);
-	List<Produto> findByQuantidadeGreaterThen(Integer quantidade);
-	List<Produto> findByQuantidadeLessThen(Integer quantidade);
+	List<Produto> findByQuantidadeGreaterThan(Integer quantidade);
+	List<Produto> findByQuantidadeLessThan(Integer quantidade);
 }
