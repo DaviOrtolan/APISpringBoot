@@ -116,7 +116,7 @@ public class ProdutoController {
 	
 	// retorna produtos com status Null
 	@GetMapping("/buscarPorStatusNulos")
-	public List<Produto> buscarPorStatussNulos() {
+	public List<Produto> buscarPorStatusNulos() {
 		return produtoService.findByStatusIsNull();
 	}
 	
